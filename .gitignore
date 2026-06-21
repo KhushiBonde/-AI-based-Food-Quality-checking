@@ -1,0 +1,18 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Node.js dependencies & builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# IDE files
+.gemini/
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
