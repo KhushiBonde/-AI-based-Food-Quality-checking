@@ -1,127 +1,26 @@
 # Smart Food Quality Checking
 
-An AI-powered food quality assessment system that automatically classifies fruits and vegetables as **Fresh** or **Rotten** using Deep Learning and Computer Vision techniques. The project utilizes transfer learning with MobileNetV2 and provides real-time predictions through a Streamlit web application.
+## Abstract
 
----
+Food quality assessment plays a crucial role in ensuring consumer health and reducing food wastage. Traditional methods of food inspection rely heavily on manual examination, which is time-consuming, subjective, and prone to human error. This project presents an AI-based food quality checking system that utilizes deep learning techniques to automatically classify fruits and vegetables as fresh or rotten. The proposed system employs transfer learning using the MobileNetV2 architecture to perform image classification across 28 classes, comprising 14 fresh and 14 rotten categories of fruits and vegetables. The model achieved a validation accuracy of 96.67%, demonstrating its effectiveness in identifying food quality. Furthermore, the trained model was integrated into a Streamlit web application to provide users with an intuitive and real-time food quality assessment platform.
 
-## Project Overview
+## 1. Introduction
 
-Food quality assessment is essential for ensuring consumer safety, maintaining food standards, and reducing food wastage. Traditional inspection methods often rely on manual examination, which can be subjective, time-consuming, and prone to human error.
+Food spoilage is a major global concern that contributes significantly to economic losses and environmental issues. The early detection of spoiled food products can improve food safety standards and minimize unnecessary waste. Advances in artificial intelligence and computer vision have enabled automated inspection systems capable of identifying quality-related characteristics from images.
 
-This project presents an automated food quality checking system that leverages Deep Learning and Computer Vision to classify fruits and vegetables into fresh and rotten categories. The model is trained using transfer learning with MobileNetV2 and achieves high classification accuracy while remaining lightweight enough for real-time deployment.
+This project focuses on developing an image-based food quality detection system that distinguishes between fresh and rotten fruits and vegetables. By leveraging deep learning techniques and transfer learning, the proposed system provides an efficient and scalable solution for automated food quality assessment.
 
----
+## 2. Literature Review
 
-## Problem Statement
+Several studies have explored the application of machine learning and deep learning techniques for food quality evaluation. Traditional machine learning approaches relied on handcrafted features such as color, texture, and shape descriptors combined with classifiers like Support Vector Machines (SVMs). However, these methods often struggled with varying environmental conditions and complex visual patterns.
 
-Food spoilage contributes significantly to economic losses and environmental challenges worldwide. Manual food inspection methods are often inefficient and inconsistent.
+Recent advancements in Convolutional Neural Networks (CNNs) have significantly improved image classification performance. Transfer learning models such as MobileNet, ResNet, and EfficientNet have been widely adopted due to their ability to leverage pre-trained knowledge from large datasets. MobileNetV2, in particular, offers a balance between computational efficiency and classification accuracy, making it suitable for real-time applications and deployment on resource-constrained platforms.
 
-The objective of this project is to develop an automated image-based system capable of identifying fresh and rotten fruits and vegetables accurately, thereby supporting food safety and reducing waste through intelligent quality assessment.
+## 3. Methodology
 
----
+### 3.1 Dataset Collection
 
-## Key Features
-
-### Automated Food Quality Detection
-
-* Classifies food items as Fresh or Rotten
-* Supports multiple fruit and vegetable categories
-* Real-time image analysis
-
-### Deep Learning-Based Classification
-
-* Transfer Learning using MobileNetV2
-* Pre-trained ImageNet weights
-* Optimized for high accuracy and fast inference
-
-### Interactive Web Application
-
-* Streamlit-based user interface
-* Upload food images for instant predictions
-* User-friendly and responsive design
-
-### Multi-Class Classification
-
-Supports 28 classes:
-
-* Fresh Apple
-* Rotten Apple
-* Fresh Banana
-* Rotten Banana
-* Fresh Bell Pepper
-* Rotten Bell Pepper
-* Fresh Carrot
-* Rotten Carrot
-* Fresh Cucumber
-* Rotten Cucumber
-* Fresh Grape
-* Rotten Grape
-* Fresh Guava
-* Rotten Guava
-* Fresh Jujube
-* Rotten Jujube
-* Fresh Mango
-* Rotten Mango
-* Fresh Orange
-* Rotten Orange
-* Fresh Pomegranate
-* Rotten Pomegranate
-* Fresh Potato
-* Rotten Potato
-* Fresh Strawberry
-* Rotten Strawberry
-* Fresh Tomato
-* Rotten Tomato
-
----
-
-## Technology Stack
-
-| Category                | Technology                |
-| ----------------------- | ------------------------- |
-| Programming Language    | Python                    |
-| Deep Learning Framework | TensorFlow                |
-| Model Architecture      | MobileNetV2               |
-| Image Processing        | Pillow                    |
-| Numerical Computing     | NumPy                     |
-| Web Application         | Streamlit                 |
-| Development Environment | Google Colab              |
-| Deployment Platform     | Streamlit Community Cloud |
-| Version Control         | Git & GitHub              |
-
----
-
-## System Workflow
-
-```text
-Input Food Image
-        │
-        ▼
-Image Preprocessing
-        │
-        ▼
-Feature Extraction
-        │
-        ▼
-MobileNetV2 Model
-        │
-        ▼
-Classification
-        │
-        ▼
-Fresh / Rotten Prediction
-        │
-        ▼
-Display Result
-```
-
----
-
-## Dataset Information
-
-The dataset consists of images from 14 fruit and vegetable categories.
-
-### Categories
+The dataset consisted of images of 14 different fruits and vegetables, each categorized into fresh and rotten classes. The categories included:
 
 * Apple
 * Banana
@@ -138,202 +37,101 @@ The dataset consists of images from 14 fruit and vegetable categories.
 * Strawberry
 * Tomato
 
-Each category contains:
+This resulted in a total of 28 classification classes.
 
-* Fresh Class
-* Rotten Class
+### 3.2 Data Preprocessing
 
-Total Classes: **28**
+The following preprocessing steps were applied:
 
----
+* Resizing images to 224 × 224 pixels.
+* Splitting the dataset into training and validation sets using an 80:20 ratio.
+* Normalizing pixel values using a rescaling layer.
+* Batch processing with a batch size of 32.
 
-## Data Preprocessing
+### 3.3 Model Architecture
 
-The following preprocessing techniques were applied:
-
-* Image resizing to 224 × 224 pixels
-* Dataset split using an 80:20 ratio
-* Pixel normalization
-* Batch processing with batch size 32
-* Data augmentation for improved generalization
-
----
-
-## Model Architecture
-
-The system utilizes MobileNetV2 with ImageNet pre-trained weights.
-
-### Custom Classification Layers
+The project utilized MobileNetV2 as the base model with ImageNet pre-trained weights. The top classification layers were replaced with custom layers consisting of:
 
 * Global Average Pooling Layer
-* Dense Layer (128 neurons, ReLU activation)
+* Dense Layer with 128 neurons and ReLU activation
 * Dropout Layer (0.3)
-* Dense Output Layer with Softmax activation
+* Output Dense Layer with Softmax activation
 
-### Transfer Learning Strategy
+The base MobileNetV2 layers were frozen during training to utilize transfer learning effectively.
 
-* Base MobileNetV2 layers frozen during training
-* Custom classifier trained on food quality dataset
-* Optimized for efficient deployment
+## 4. Implementation
 
----
+### Tools and Technologies
 
-## Project Structure
+* Python
+* TensorFlow
+* MobileNetV2
+* Google Colab
+* Streamlit
+* NumPy
+* Pillow
+* JSON
 
-```text
-SmartFoodQualityChecker/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── model/
-│   ├── food_quality_model.h5
-│   └── class_labels.json
-│
-├── dataset/
-│   ├── train/
-│   └── validation/
-│
-├── notebooks/
-│   └── training.ipynb
-│
-├── utils/
-│   ├── preprocessing.py
-│   └── prediction.py
-│
-└── assets/
-    └── screenshots/
-```
+### Development Environment
 
----
+* Model Training: Google Colab
+* Version Control: GitHub
+* Deployment Platform: Streamlit Community Cloud
 
-## Installation
+### Workflow
 
-### Clone Repository
+1. Dataset acquisition and organization.
+2. Data preprocessing and augmentation.
+3. Transfer learning using MobileNetV2.
+4. Model training and validation.
+5. Saving the trained model and class labels.
+6. Developing a Streamlit-based user interface.
+7. Deployment on Streamlit Community Cloud.
 
-```bash
-git clone <repository-url>
-cd SmartFoodQualityChecker
-```
+## 5. Results
 
-### Create Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### Activate Environment
-
-#### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-#### Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Running the Application
-
-Launch the Streamlit application:
-
-```bash
-streamlit run app.py
-```
-
-Application URL:
-
-```text
-http://localhost:8501
-```
-
----
-
-## Results
-
-The trained model achieved excellent classification performance on the validation dataset.
+The trained model demonstrated strong classification performance on the validation dataset.
 
 ### Performance Metrics
 
-| Metric              | Value       |
-| ------------------- | ----------- |
-| Validation Accuracy | 96.67%      |
-| Total Classes       | 28          |
-| Input Size          | 224 × 224   |
-| Deep Learning Model | MobileNetV2 |
+* Validation Accuracy: **96.67%**
+* Number of Classes: **28**
+* Input Image Size: **224 × 224 pixels**
+* Deep Learning Model: **MobileNetV2**
 
-The achieved validation accuracy demonstrates the effectiveness of transfer learning for automated food quality assessment.
+The high validation accuracy indicates that the proposed approach effectively differentiates between fresh and rotten food items across multiple categories.
 
----
+## 6. Limitations
 
-## Limitations
+Despite achieving high accuracy, the system has several limitations:
 
-* Performance may decrease under poor lighting conditions.
-* Limited to the 14 food categories used during training.
-* Complex backgrounds may impact prediction accuracy.
-* Does not currently estimate spoilage severity levels.
+* Performance may decrease when images are captured under poor lighting conditions.
+* The model is restricted to the 14 fruit and vegetable categories used during training.
+* Variations in image quality and background complexity may affect prediction accuracy.
+* The current system provides classification results but does not estimate the degree of spoilage.
 
----
+## 7. Future Scope
 
-## Future Enhancements
+The project can be extended in several ways:
 
-* Support for additional food categories
-* Object detection for multiple food items in a single image
-* Mobile application development
-* IoT sensor integration for food monitoring
-* Explainable AI for prediction interpretation
-* Cloud-based deployment
-* Spoilage severity estimation
-* Real-time camera-based detection
+* Incorporating additional food categories to improve generalization.
+* Implementing object detection for identifying multiple food items within a single image.
+* Developing a mobile application for wider accessibility.
+* Integrating Internet of Things (IoT) sensors for comprehensive food monitoring.
+* Employing explainable AI techniques to interpret prediction outcomes.
 
----
+## 8. Conclusion
 
-## Applications
+This project successfully developed an AI-based food quality checking system capable of distinguishing between fresh and rotten fruits and vegetables using transfer learning. By utilizing MobileNetV2 and deploying the model through a Streamlit application, the proposed solution offers a practical and efficient approach to automated food quality assessment. The achieved validation accuracy of 96.67% demonstrates the potential of deep learning techniques in addressing real-world challenges related to food safety and waste reduction.
 
-* Food Quality Inspection
-* Supermarkets and Retail Stores
-* Agricultural Industry
-* Food Supply Chain Management
-* Smart Kitchens
-* Food Waste Reduction Systems
-* Educational and Research Applications
+## 9. References
 
----
+1. Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L. (2018). *MobileNetV2: Inverted Residuals and Linear Bottlenecks*. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
-## Conclusion
+2. Chollet, F. (2017). *Xception: Deep Learning with Depthwise Separable Convolutions*. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
-The Smart Food Quality Checking system demonstrates the practical application of Deep Learning and Computer Vision in food quality assessment. By leveraging transfer learning through MobileNetV2 and deploying the model using Streamlit, the system provides an efficient and scalable solution for identifying fresh and rotten fruits and vegetables.
+3. TensorFlow Documentation. Available at: https://www.tensorflow.org/
 
-The achieved validation accuracy of 96.67% highlights the effectiveness of the proposed approach and its potential for real-world deployment in food safety and waste reduction initiatives.
+4. Streamlit Documentation. Available at: https://docs.streamlit.io/
 
----
-
-## References
-
-1. Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., & Chen, L. (2018). MobileNetV2: Inverted Residuals and Linear Bottlenecks.
-2. Chollet, F. (2017). Xception: Deep Learning with Depthwise Separable Convolutions.
-3. TensorFlow Documentation
-4. Streamlit Documentation
-5. Kaggle Dataset Repository
-6. Research Papers on Food Quality Assessment using Deep Learning
-
----
-
-## Author
-
-**Khushi Bonde**
-B.Tech CSE (Data Science)
-Suryodaya College of Engineering & Technology, Nagpur
-RTM Nagpur University (RTMNU)
+5. Kaggle Dataset Repository used for training and evaluation.
