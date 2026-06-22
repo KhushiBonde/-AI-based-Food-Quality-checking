@@ -1,0 +1,190 @@
+SMART FOOD QUALITY CHECKING PROJECT
+HOW TO RUN THE PROJECT LOCALLY
+
+==========================================================
+
+1. CLONE THE REPOSITORY
+   ==========================================================
+
+Open terminal and run:
+
+git clone https://github.com/KhushiBonde/-AI-based-Food-Quality-checking.git
+
+Move into project folder:
+
+cd -AI-based-Food-Quality-checking
+
+==========================================================
+2. CREATE VIRTUAL ENVIRONMENT (RECOMMENDED)
+===========================================
+
+Create virtual environment:
+
+python -m venv venv
+
+Activate environment
+
+For Windows:
+
+venv\Scripts\activate
+
+For Mac/Linux:
+
+source venv/bin/activate
+
+==========================================================
+3. INSTALL PYTHON DEPENDENCIES
+==============================
+
+Install required packages:
+
+pip install -r requirements.txt
+
+This installs libraries such as:
+
+* TensorFlow
+* NumPy
+* Pillow
+* FastAPI / Backend dependencies
+* Model dependencies
+
+==========================================================
+4. VERIFY PROJECT FILES
+=======================
+
+Ensure these files exist:
+
+frontend/                     → Frontend application
+api.py                       → Backend API
+app.py                       → Main application logic
+fruit_freshness_model.keras  → Trained AI model
+class_names.json            → Prediction classes
+requirements.txt            → Python dependencies
+
+==========================================================
+5. RUN BACKEND SERVER
+=====================
+
+Start Python backend:
+
+python api.py
+
+OR if app.py is main server:
+
+python app.py
+
+(Use whichever file starts your backend server)
+
+==========================================================
+6. RUN FRONTEND APPLICATION
+===========================
+
+Move to frontend folder:
+
+cd frontend
+
+Install frontend dependencies:
+
+npm install
+
+Start frontend locally:
+
+npm run dev
+
+==========================================================
+7. OPEN APPLICATION
+===================
+
+After running frontend, open browser.
+
+Usually:
+
+http://localhost:3000
+
+or
+
+http://localhost:5173
+
+depending on frontend configuration.
+
+==========================================================
+8. HOW THE SYSTEM WORKS
+=======================
+
+Step 1 → User uploads food image
+
+Step 2 → Frontend sends image to backend API
+
+Step 3 → AI model preprocesses image
+
+Step 4 → MobileNetV2 model analyzes image
+
+Step 5 → Model predicts category
+
+Step 6 → Output displayed to user
+
+Possible outputs:
+
+fresh_apple
+fresh_banana
+fresh_mango
+fresh_tomato
+rotten_apple
+rotten_banana
+rotten_mango
+rotten_tomato
+
+(28 total classes)
+
+==========================================================
+9. DEPLOYED APPLICATION
+=======================
+
+Live deployed project:
+
+https://ai-based-food-quality-checking.vercel.app
+
+==========================================================
+10. TROUBLESHOOTING
+===================
+
+Problem: Python dependency error
+
+Solution:
+
+pip install -r requirements.txt
+
+Problem: Frontend packages missing
+
+Solution:
+
+npm install
+
+Problem: Model file not loading
+
+Solution:
+
+Check fruit_freshness_model.keras exists
+
+Problem: Frontend not starting
+
+Solution:
+
+Check package.json inside frontend folder
+
+==========================================================
+TECH STACK
+==========
+
+Python
+TensorFlow
+MobileNetV2
+JavaScript / TypeScript
+Frontend Framework
+HTML/CSS
+Vercel Deployment
+GitHub
+
+==========================================================
+END
+===
