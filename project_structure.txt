@@ -1,0 +1,137 @@
+SMART FOOD QUALITY CHECKING
+PROJECT STRUCTURE
+
+============================================================
+AI-BASED-FOOD-QUALITY-CHECKING
+==============================
+
+AI-based-Food-Quality-checking/
+│
+├── frontend/
+│   │
+│   ├── public/
+│   │      └── Static assets and images
+│   │
+│   ├── src/
+│   │      ├── UI Components
+│   │      ├── API Integration Logic
+│   │      ├── Prediction Interface
+│   │      └── Frontend Application Code
+│   │
+│   ├── package.json
+│   │      └── Frontend dependencies
+│   │
+│   ├── vite.config.js / config files
+│   │      └── Build configuration
+│   │
+│   └── Frontend deployment files
+│
+│
+├── api.py
+│      └── Backend API handling requests from frontend
+│
+│
+├── app.py
+│      └── Main application execution logic
+│
+│
+├── fruit_freshness_model.keras
+│      └── Trained Deep Learning model
+│
+│
+├── class_names.json
+│      └── Stores all prediction classes
+│
+│
+├── requirements.txt
+│      └── Python package dependencies
+│
+│
+├── pyproject.toml
+│      └── Python project configuration
+│
+│
+└── README.md
+└── Project documentation
+
+============================================================
+MODEL PREDICTION CLASSES
+========================
+
+28 Total Classification Classes
+
+## Fresh Categories
+
+fresh_apple
+fresh_banana
+fresh_bellpepper
+fresh_carrot
+fresh_cucumber
+fresh_grape
+fresh_guava
+fresh_jujube
+fresh_mango
+fresh_orange
+fresh_pomegranate
+fresh_potato
+fresh_strawberry
+fresh_tomato
+
+## Rotten Categories
+
+rotten_apple
+rotten_banana
+rotten_bellpepper
+rotten_carrot
+rotten_cucumber
+rotten_grape
+rotten_guava
+rotten_jujube
+rotten_mango
+rotten_orange
+rotten_pomegranate
+rotten_potato
+rotten_strawberry
+rotten_tomato
+
+============================================================
+PROJECT ARCHITECTURE
+====================
+
+User Uploads Food Image
+│
+▼
+Frontend Interface
+│
+▼
+Backend API (api.py)
+│
+▼
+Image Preprocessing
+│
+▼
+Deep Learning Model
+(MobileNetV2)
+│
+▼
+Classification
+(28 Classes)
+│
+▼
+Prediction Output
+(Fresh / Rotten)
+
+============================================================
+TECHNOLOGY STACK
+================
+
+Frontend        : HTML / CSS / JavaScript
+Backend         : Python
+AI Model        : TensorFlow + MobileNetV2
+API             : Python API
+Deployment      : Vercel
+Version Control : GitHub
+
+============================================================
+END
+===
