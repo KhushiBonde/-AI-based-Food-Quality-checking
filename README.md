@@ -343,28 +343,3 @@ The achieved validation accuracy of **96.67%** demonstrates the effectiveness of
 
 ---
 
-#  Installation
-
-Clone repository
-
-```bash id="f6"
-git clone https://github.com/KhushiBonde/-AI-based-Food-Quality-checking.git
-```
-
-Install dependencies
-
-```bash id="g7"
-pip install -r requirements.txt
-```
-
-Run locally
-
-```bash id="h8"
-streamlit run app.py
-```
-
----
-
-<p align="center">
-⭐ If you found this project interesting, consider starring the repository.
-</p>
