@@ -248,7 +248,8 @@ Planned enhancements:
 5. Deep Learning for Image Classification Research Papers
 
 ---
-## Deployment Link : ai-based-food-quality-checking.vercel.app
+## Deployment Link :
+ai-based-food-quality-checking.vercel.app
 
 ## 👨‍💻 Installation
 
