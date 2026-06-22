@@ -17,7 +17,7 @@ An AI-powered food freshness detection system that classifies fruits and vegetab
 
  **Try the application here**
 
-**🔗 [Live Demo](ai-based-food-quality-checking.vercel.app)**
+**🔗 [Live Demo](https://ai-based-food-quality-checking.vercel.app/)**
 
 ---
 
